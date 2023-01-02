@@ -5,17 +5,17 @@ import java.time.LocalDateTime;
 public class Organization {
 
     private Long id;
-    private String organizationId;
+    private String organization_id;
     private String password;
     private String email;
     private String nickname;
     private String phone_number;
-    private String imageName;
+    private String image_name;
     private String introduction;
     private String zipcode;
     private String address;
     private String account;
     private String bank;
-    private LocalDateTime createDate;
-    private LocalDateTime modifiedDate;
+    private LocalDateTime create_date;
+    private LocalDateTime modified_date;
 }

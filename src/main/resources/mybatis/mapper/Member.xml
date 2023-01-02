@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//matis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.user.MemberRepository">
+
+    <insert id="saveMember" parameterType="com.doneasy.don.domain.user.Member">
+        insert into Member values(member_seq.nextval, #{member_id}, #{password}, #{email}, #{nickname}, #{phone_number}, user, #{create_date}, #{modified_date}
+    </insert>
+</mapper>

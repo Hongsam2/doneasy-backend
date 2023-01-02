@@ -1,11 +1,20 @@
 package com.doneasy.don.domain.user;
 
+//import lombok.AllArgsConstructor;
+import com.doneasy.don.service.user.MemberDateService;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+
 import java.time.LocalDateTime;
 
+@Getter
+@AllArgsConstructor
+//@AllArgsConstructor
 public class Member {
 
     private Long id;
-    private String memberId;
+    private String member_id;
     private String password;
     private String email;
     private String nickname;
@@ -14,4 +23,7 @@ public class Member {
     private Grade grade;
     private LocalDateTime createDate;
     private LocalDateTime modifiedDate;
+
+
+
 }
