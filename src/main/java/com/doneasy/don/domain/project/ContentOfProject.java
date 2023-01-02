@@ -1,16 +1,21 @@
 package com.doneasy.don.domain.project;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import java.sql.Date;
 import java.time.LocalDateTime;
 
+@Getter
+@AllArgsConstructor
 public class ContentOfProject {
 
     private Long id;
     private String subtitle;
-    private String contents;
-    private String imageName;
-    private Integer order;
-    private ContentOfProjectStatus status;
-    private LocalDateTime createDate;
-    private LocalDateTime modifiedDate;
-    private Long projectId;
+    private String content;
+    private String image_name;
+    private Integer order_num;
+    private String create_date;
+    private String modified_date;
+    private Long project_id;
 }
