@@ -1,6 +1,6 @@
 package com.doneasy.don.domain.admin.notice;
 
-import com.doneasy.don.dto.admin.notice.NoticeContentDto;
+import com.doneasy.don.dto.admin.notice.ContentOfNoticeDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -19,7 +19,7 @@ public class ContentsOfNotice {
     private LocalDateTime modified_date;
     private Long notice_id;
 
-    public static ContentsOfNotice getContentsOfNotice(NoticeContentDto noticeContentDto, int index, String imageName, Long noticeId) {
-        return new ContentsOfNotice(null, noticeContentDto.getSubtitle(), noticeContentDto.getContent(), imageName, index, LocalDateTime.now(), LocalDateTime.now(), noticeId);
+    public static ContentsOfNotice getContentsOfNotice(ContentOfNoticeDto contentOfNoticeDto, int index, String imageName, Long noticeId) {
+        return new ContentsOfNotice(null, contentOfNoticeDto.getSubtitle(), contentOfNoticeDto.getContent(), imageName, index, LocalDateTime.now(), LocalDateTime.now(), noticeId);
     }
 }

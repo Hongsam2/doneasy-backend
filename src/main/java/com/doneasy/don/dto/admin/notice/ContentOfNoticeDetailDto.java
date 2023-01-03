@@ -5,9 +5,10 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class NoticeContentDto {
+public class ContentOfNoticeDetailDto {
 
-    private Long index;
+    private Integer index;
     private String subtitle;
     private String content;
+    private byte[] image;
 }

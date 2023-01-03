@@ -7,9 +7,10 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class NoticeSaveDto {
+public class NoticeDetailDto {
 
     private String title;
-    private List<ContentOfNoticeDto> contextList;
+    private List<ContentOfNoticeDetailDto> contentOfNoticeDetailDtoList;
+
 
 }

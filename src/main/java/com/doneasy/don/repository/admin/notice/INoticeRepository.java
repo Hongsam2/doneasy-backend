@@ -12,4 +12,7 @@ public interface INoticeRepository {
     List<Notice> findAll();
     Boolean save(Notice notice);
     Notice findRecent();
+    Notice findById(Long id);
+    Boolean deleteById(Long id);
+    List<Notice> findByTitle(String title);
 }
