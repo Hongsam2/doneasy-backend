@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doneasy.don.repository.project.ProjectRepository">
+    <select id="findProjectInfoByProjectId" resultType="com.doneasy.don.dto.ProjectShowDto">
+        select pp.title, p.created_date, pp.deadline, pp.service_start_date, pp.service_end_date, pp.target_price, oz.nickname
+        from project p, project_proposal pp, organization oz
+        where p.id=#{id}
+        and p.pp_id = pp.id
+        and p.oz_id = oz.id
+    </select>
+</mapper>

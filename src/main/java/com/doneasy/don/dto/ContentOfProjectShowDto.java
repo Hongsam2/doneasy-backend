@@ -7,6 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class ContentOfProjectShowDto {
 
+    private Long id;
     private String subtitle;
     private String content;
     private String image_name;

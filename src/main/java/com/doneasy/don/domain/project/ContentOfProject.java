@@ -15,7 +15,7 @@ public class ContentOfProject {
     private String content;
     private String image_name;
     private Integer order_num;
-    private String create_date;
+    private String created_date;
     private String modified_date;
     private Long project_id;
 }

@@ -24,13 +24,12 @@ public class ContentOfProjectController {
 
     private final ContentOfProjectRepository contentOfProject;
     @PostMapping("/get-content")
-    public ResponseEntity<List<ContentOfProject>> getContent(HttpServletRequest req, HttpServletResponse res, @RequestBody HashMap<String, Object> map) throws IOException {
-        Integer id = Integer.parseInt((String)map.get("id"));
+    public ResponseEntity<List<ContentOfProject>> getContent(HttpServletRequest req, HttpServletResponse res, int id) {
         System.out.println(id);
         List<ContentOfProject> findContent = contentOfProject.findAllByProjectId(id);
         List<ContentOfProjectShowDto> list = new ArrayList<>();
         for (ContentOfProject ofProject : findContent) {
-            list.add(new ContentOfProjectShowDto(ofProject.getSubtitle(), ofProject.getContent(), ofProject.getImage_name(), ofProject.getOrder_num()));
+            list.add(new ContentOfProjectShowDto(ofProject.getId(), ofProject.getSubtitle(), ofProject.getContent(), ofProject.getImage_name(), ofProject.getOrder_num()));
         }
         return new ResponseEntity(list, HttpStatus.OK);
     }
