@@ -7,10 +7,10 @@ public class ContentOfCampaign {
     private Long id;
     private String subtitle;
     private String contents;
-    private String imageName;
+    private String image_name;
     private Integer order;
     private ContentOfCampaignStatus status;
-    private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
-    private Long campaignId;
+    private LocalDateTime created_date;
+    private LocalDateTime modified_date;
+    private Long campaign_id;
 }

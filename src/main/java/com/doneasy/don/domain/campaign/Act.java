@@ -7,7 +7,7 @@ public class Act {
     private Long id;
     private String contents;
     private ActStatus status;
-    private LocalDateTime createdDate;
-    private Long memberId;
-    private Long campaignId;
+    private LocalDateTime created_date;
+    private Long member_id;
+    private Long campaign_id;
 }

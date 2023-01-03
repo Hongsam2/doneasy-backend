@@ -5,14 +5,14 @@ import java.time.LocalDateTime;
 public class CampaignProposal {
 
     private Long id;
-    private String howToUseFirst;
-    private String howToUseSecond;
-    private String howToUseThird;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private String how_to_use_first;
+    private String how_to_use_second;
+    private String how_to_use_third;
+    private LocalDateTime start_date;
+    private LocalDateTime end_date;
     private int goal;
     private String word;
     private CampaignProposalStatus status;
-    private LocalDateTime createdDate;
-    private Long organizationId;
+    private LocalDateTime created_date;
+    private Long organization_id;
 }

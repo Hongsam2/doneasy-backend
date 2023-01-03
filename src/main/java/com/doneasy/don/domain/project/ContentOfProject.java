@@ -6,11 +6,11 @@ public class ContentOfProject {
 
     private Long id;
     private String subtitle;
-    private String contents;
-    private String imageName;
-    private Integer order;
+    private String content;
+    private String image_name;
+    private Integer order_num;
     private ContentOfProjectStatus status;
-    private LocalDateTime createDate;
-    private LocalDateTime modifiedDate;
-    private Long projectId;
+    private LocalDateTime created_date;
+    private LocalDateTime modified_date;
+    private Long project_id;
 }

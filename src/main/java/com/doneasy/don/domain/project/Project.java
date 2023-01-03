@@ -7,12 +7,12 @@ public class Project {
     private Long id;
     private Target target;
     private LocalDateTime deadline;
-    private LocalDateTime serviceStartDate;
-    private LocalDateTime serviceEndDate;
+    private LocalDateTime service_start_date;
+    private LocalDateTime service_end_date;
     private String title;
     private ProjectStatus status;
-    private Integer targetPrice;
-    private LocalDateTime createDate;
-    private LocalDateTime modifiedDate;
-    private Long organizationId;
+    private Integer target_price;
+    private LocalDateTime created_date;
+    private LocalDateTime modified_date;
+    private Long organization_id;
 }

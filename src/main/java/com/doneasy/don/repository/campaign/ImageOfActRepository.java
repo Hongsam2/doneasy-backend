@@ -1,4 +1,4 @@
 package com.doneasy.don.repository.campaign;
 
-public interface ContentOfCampaign {
+public interface ImageOfActRepository {
 }
