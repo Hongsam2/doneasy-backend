@@ -15,4 +15,5 @@ public class CampaignProposal {
     private CampaignProposalStatus status;
     private LocalDateTime createdDate;
     private Long organizationId;
+
 }
