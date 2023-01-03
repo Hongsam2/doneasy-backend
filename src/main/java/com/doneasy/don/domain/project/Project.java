@@ -1,7 +1,9 @@
 package com.doneasy.don.domain.project;
 
-import java.time.LocalDateTime;
+import lombok.Getter;
 
+import java.time.LocalDateTime;
+@Getter
 public class Project {
 
     private Long id;

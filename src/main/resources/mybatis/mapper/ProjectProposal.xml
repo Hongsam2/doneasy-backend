@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mabatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.project.ProjectProposalRepository">
+    <insert id="saveProject" parameterType="com.doneasy.don.domain.project.ProjectProposal">
+insert into projectproposal values(projectproposal_seq.nextval,#{category},#{deadline},#{service_start_date},#{service_end_date},#{title},#{target_price},#{status},#{create_date},#{organization_id});
+    </insert>
+<select id="findRecent" resultType="com.doneasy.don.domain.project.ProjectProposal">
+    select * from projectproposal desc limit 1;
+</select>
+
+</mapper>
