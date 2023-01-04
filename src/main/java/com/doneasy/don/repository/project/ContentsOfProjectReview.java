@@ -1,4 +1,11 @@
 package com.doneasy.don.repository.project;
 
+import com.doneasy.don.domain.project.ContentOfProjectReview;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
 public interface ContentsOfProjectReview {
+
+
+    Boolean saveContentOfProjectReview(ContentOfProjectReview contentOfProjectReview);
 }

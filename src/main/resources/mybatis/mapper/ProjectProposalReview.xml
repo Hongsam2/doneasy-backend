@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mabatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.project.ProjectReview">
+    <insert id="saveReview" parameterType="com.doneasy.don.domain.project.ProjectProposalReview">
+        insert into projectreview values(projectreview_seq.nextval,#{title},#{create_date},#{organization_id},#{project_id});
+    </insert>
+
+    <select id="findReviewRecent" resultType="com.doneasy.don.domain.project.ProjectProposalReview">
+        select * from projectreview desc limit 1;
+    </select>
+
+</mapper>

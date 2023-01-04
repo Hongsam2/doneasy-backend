@@ -1,8 +1,11 @@
 package com.doneasy.don.web.controller;
 
 import com.doneasy.don.dto.BoardSaveDto;
+import com.doneasy.don.dto.BoardSaveReDto;
+import com.doneasy.don.dto.ContentReDto;
 import com.doneasy.don.repository.project.ProjectProposalRepository;
 import com.doneasy.don.service.project.ProjectProposalService;
+import com.doneasy.don.service.project.ReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +26,7 @@ public class UserController {
     private final ProjectProposalRepository projectProposalRepositoryRe;
     private final com.doneasy.don.repository.project.ContentOfProject contentOfProjectRe;
     private final ProjectProposalService projectProposalService;
-
+    private final ReviewService reviewService;
 //    @PostMapping("/save")
 //    public ResponseEntity seveBoard(BoardSaveDto boardSaveDto, @RequestPart(value = "image") List<MultipartFile> multipartFiles) throws IOException {
 //        ContentOfProject contentOfProject = ContentOfProject.getContentOfProject(boardSaveDto);
@@ -40,19 +43,9 @@ public class UserController {
 
     @PostMapping("/save")
     public ResponseEntity save(@RequestPart("boardSaveDto") BoardSaveDto boardSaveDto, @RequestPart("imageList") List<MultipartFile> multipartFileList) throws IOException {
-
-
         projectProposalService.save(boardSaveDto, multipartFileList);
-
-
-
-
-
-
-
-
-
-
+        return ResponseEntity.ok().build();
+    }
 
 //        ContentOfProject contentOfProject1=ContentOfProject.getContentOfProject(boardSaveDto);
 //        contentOfProjectRe.saveContent(contentOfProject1)
@@ -71,11 +64,24 @@ public class UserController {
 //        }
 //        System.out.println(multipartFileList.get(0).getOriginalFilename());
 
+    @PostMapping("/saveReview")
+    public ResponseEntity saveReview(@RequestPart("boardSaveReDto") BoardSaveReDto boardSaveReDto, @RequestPart("imageList") List<MultipartFile> multipartFileList) throws IOException {
+        reviewService.saveRe(boardSaveReDto, multipartFileList);
+
+
+   List<ContentReDto> contentReDtoList= boardSaveReDto.getContentReDtoList();
+        for (ContentReDto contentReDto : contentReDtoList) {
+            System.out.println(contentReDto.getSubtitle());
+            System.out.println(contentReDto.getContents());
+        }
 
 
 
+
+        System.out.println(multipartFileList.get(0).getOriginalFilename());
         return ResponseEntity.ok().build();
     }
+
 
 
 }
