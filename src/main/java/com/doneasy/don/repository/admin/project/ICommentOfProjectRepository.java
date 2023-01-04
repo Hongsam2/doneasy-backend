@@ -8,5 +8,7 @@ import java.util.List;
 @Mapper
 public interface ICommentOfProjectRepository {
 
+    List<CommentOfProject> findAll();
     List<CommentOfProject> findByProjectId(Long projectId);
+    Boolean statusToBlind(Long id);
 }

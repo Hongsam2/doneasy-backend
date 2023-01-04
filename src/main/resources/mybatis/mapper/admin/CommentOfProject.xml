@@ -5,7 +5,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.doneasy.don.repository.admin.project.ICommentOfProjectRepository">
+
+    <select id="findAll" resultType="com.doneasy.don.domain.project.CommentOfProject">
+        select * from commentofproject
+    </select>
+
     <select id="findByProjectId" resultType="com.doneasy.don.domain.project.CommentOfProject">
         select * from commentofproject where id=#{id}
     </select>
+
+    <update id="statusToBlind" parameterType="com.doneasy.don.domain.project.CommentOfProject">
+        update commentofproject set status='BLIND' where id=#{id}
+    </update>
 </mapper>
