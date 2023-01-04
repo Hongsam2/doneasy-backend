@@ -7,6 +7,6 @@
 <mapper namespace="com.doneasy.don.repository.user.MemberRepository">
 
     <insert id="saveMember" parameterType="com.doneasy.don.domain.user.Member">
-        insert into Member values(member_seq.nextval, #{member_id}, #{password}, #{email}, #{nickname}, #{phone_number}, user, #{create_date}, #{modified_date}
+        insert into Member values(member_seq.nextval, #{member_id}, #{password}, #{email}, #{nickname}, #{phone_number},'ACTIVATE','USER', now(), now())
     </insert>
 </mapper>

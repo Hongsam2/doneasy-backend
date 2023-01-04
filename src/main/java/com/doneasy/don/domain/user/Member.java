@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
-//@AllArgsConstructor
 public class Member {
 
     private Long id;
@@ -18,7 +17,7 @@ public class Member {
     private String password;
     private String email;
     private String nickname;
-    private String phoneNumber;
+    private String phone_number;
     private MemberStatus status;
     private Grade grade;
     private LocalDateTime createDate;
