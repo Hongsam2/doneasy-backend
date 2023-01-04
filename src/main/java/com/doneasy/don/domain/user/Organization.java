@@ -1,7 +1,10 @@
 package com.doneasy.don.domain.user;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 public class Organization {
 
     private Long id;

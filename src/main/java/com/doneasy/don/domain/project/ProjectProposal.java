@@ -1,7 +1,10 @@
 package com.doneasy.don.domain.project;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 public class ProjectProposal {
 
     private Long id;
@@ -13,6 +16,6 @@ public class ProjectProposal {
     private Integer target_price;
     private ProjectProposalStatus status;
     private LocalDateTime created_date;
-    private Long member_id;
+    private Long organization_id;
 
 }

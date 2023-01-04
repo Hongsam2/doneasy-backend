@@ -31,7 +31,6 @@ public class NoticeController {
         if (search == null) {
             return new ResponseEntity(noticeService.getNoticeAsList(), HttpStatus.OK);
         }
-        log.info("search: {}", search);
         List<Notice> findNoticeList = noticeRepository.findByTitle(search);
         return new ResponseEntity(findNoticeList, HttpStatus.OK);
     }
@@ -40,7 +39,7 @@ public class NoticeController {
      * @RequestBody JSON 형식의 데이터를 객체에 매핑해준다.
      */
     @PostMapping(value = "/notice/create", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
-    public ResponseEntity save(@RequestPart("noticeSaveDto") NoticeSaveDto noticeSaveDto, @RequestPart List<MultipartFile> fileList) throws IOException {
+    public ResponseEntity save(@RequestPart("noticeSaveDto") NoticeSaveDto noticeSaveDto, @RequestPart(required = false) List<MultipartFile> fileList) throws IOException {
 
         noticeService.save(noticeSaveDto, fileList);
         return ResponseEntity.ok().build();

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//matis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.admin.project.ISupportOfProjectRepository">
+    <select id="findByProjectId" resultType="com.doneasy.don.domain.project.SupportOfProject">
+        select * from supportofproject where project_id=#{projectId}
+    </select>
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//matis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.project.ProjectRepository">
+
+    <insert id="save" parameterType="com.doneasy.don.domain.project.Project">
+        insert into project values (project_seq.nextval, 'ACTIVE', now(), #{projectProposalId}, #{organizationId})
+    </insert>
+
+    <select id="findAll" resultType="com.doneasy.don.domain.project.Project">
+        select * from project
+    </select>
+
+    <update id="statusToDone" parameterType="com.doneasy.don.domain.project.Project">
+        update project set status='DONE' where id=#{id}
+    </update>
+
+    <select id="findByProjectProposalId" resultType="com.doneasy.don.domain.project.Project">
+        select * from project where projectproposal_id=#{id}
+    </select>
+
+</mapper>

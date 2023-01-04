@@ -13,7 +13,7 @@
     </insert>
 
     <select id="findRecent" resultType="com.doneasy.don.domain.admin.notice.Notice">
-        select * from Notice desc limit 1
+        select * from Notice order by id desc limit 1
     </select>
 
     <select id="findById" resultType="com.doneasy.don.domain.admin.notice.Notice">
