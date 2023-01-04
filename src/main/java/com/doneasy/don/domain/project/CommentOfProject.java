@@ -1,12 +1,14 @@
 package com.doneasy.don.domain.project;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 public class CommentOfProject {
 
     private Long id;
-    private String comment;
-    private int price;
+    private String content;
     private CommentOfProjectStatus status;
     private LocalDateTime created_date;
     private Long member_id;

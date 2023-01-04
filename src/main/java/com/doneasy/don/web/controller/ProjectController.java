@@ -25,7 +25,7 @@ public class ProjectController {
 
     @PostMapping("/get-project")
     public ResponseEntity getProject(HttpServletRequest req, HttpServletResponse res, int id) {
-        System.out.println(id);
+//        System.out.println(id);
         ProjectShowDto findProjectInfo = projectRepository.findProjectInfoByProjectId(id);
 
         return new ResponseEntity(findProjectInfo, HttpStatus.OK);

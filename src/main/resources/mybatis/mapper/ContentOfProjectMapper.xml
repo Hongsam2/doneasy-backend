@@ -5,7 +5,6 @@
 <mapper namespace="com.doneasy.don.repository.project.ContentOfProjectRepository">
 
     <select id="findAllByProjectId" resultType="com.doneasy.don.domain.project.ContentOfProject">
-        select * from contentofproject where p_id=#{projectId}
+        select * from contentofproject where projectproposal_id = (select projectproposal_id from project where id = #{project_id})
     </select>
 </mapper>
-

@@ -7,11 +7,11 @@ public class ProjectProposal {
     private Long id;
     private Target target;
     private LocalDateTime deadline;
-    private LocalDateTime serviceStartDate;
-    private LocalDateTime serviceEndDate;
+    private LocalDateTime service_start_date;
+    private LocalDateTime service_end_date;
     private String title;
-    private Integer targetPrice;
+    private Integer target_price;
     private ProjectProposalStatus status;
-    private LocalDateTime createDate;
-    private Long memberId;
+    private LocalDateTime created_date;
+    private Long member_id;
 }

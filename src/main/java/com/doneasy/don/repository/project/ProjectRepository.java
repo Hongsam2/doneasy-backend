@@ -1,6 +1,5 @@
 package com.doneasy.don.repository.project;
 
-import com.doneasy.don.domain.project.Project;
 import com.doneasy.don.dto.ProjectShowDto;
 import org.apache.ibatis.annotations.Mapper;
 

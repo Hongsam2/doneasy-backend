@@ -5,5 +5,5 @@ public class UsagePlan {
     private Long id;
     private String name;
     private Integer price;
-    private Long projectId;
+    private Long project_id;
 }

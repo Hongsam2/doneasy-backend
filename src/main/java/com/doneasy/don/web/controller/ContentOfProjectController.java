@@ -25,7 +25,7 @@ public class ContentOfProjectController {
     private final ContentOfProjectRepository contentOfProject;
     @PostMapping("/get-content")
     public ResponseEntity<List<ContentOfProject>> getContent(HttpServletRequest req, HttpServletResponse res, int id) {
-        System.out.println(id);
+//        System.out.println(id);
         List<ContentOfProject> findContent = contentOfProject.findAllByProjectId(id);
         List<ContentOfProjectShowDto> list = new ArrayList<>();
         for (ContentOfProject ofProject : findContent) {
