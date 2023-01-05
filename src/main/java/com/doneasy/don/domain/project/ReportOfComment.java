@@ -1,5 +1,8 @@
 package com.doneasy.don.domain.project;
 
+import lombok.Getter;
+
+@Getter
 public class ReportOfComment {
 
     private Long id;

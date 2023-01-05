@@ -6,4 +6,7 @@
     <insert id="saveSupport" parameterType="com.doneasy.don.domain.project.SupportOfProject">
         insert into supportofproject values (supportofproject_seq.nextval, sysdate, 1, #{project_id});
     </insert>
+    <select id="getSupport" resultType="com.doneasy.don.dto.SupportOfProjectShowDto">
+        select id, member_id, project_id from supportofproject where project_id = #{id}
+    </select>
 </mapper>

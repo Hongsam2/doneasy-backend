@@ -23,6 +23,7 @@ import java.util.List;
 public class CommentOfProjectController {
 
     private final CommentOfProjectRepository commentOfProjectRepository;
+
     @PostMapping("/get-comment")
     public ResponseEntity getComment(HttpServletRequest req, HttpServletResponse res, int id) {
 //        System.out.println(id);
