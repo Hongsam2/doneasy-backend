@@ -12,6 +12,7 @@ public class AppConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("http://localhost:3000")
                 .allowedMethods("*")
+                .allowedHeaders("Authorization", "content-type")
                 .maxAge(24 * 3600);
     }
 }

@@ -3,12 +3,15 @@ package com.doneasy.don.web.controller.admin;
 import com.doneasy.don.dto.admin.comment.CommentListDto;
 import com.doneasy.don.repository.admin.project.ICommentOfProjectRepository;
 import com.doneasy.don.service.admin.comment.CommentService;
+import com.doneasy.don.web.jwt.JwtTokenService;
+import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,6 +23,7 @@ public class CommentController {
 
     private final CommentService commentService;
     private final ICommentOfProjectRepository commentOfProjectRepository;
+    private final JwtTokenService jwtTokenService;
 
     @GetMapping("/comment")
     public ResponseEntity<List<CommentListDto>> getAll() {
@@ -40,4 +44,19 @@ public class CommentController {
 
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @GetMapping("/test")
+    public ResponseEntity test() {
+        String token = jwtTokenService.makeJwtToken("ThisisMember", null);
+        return new ResponseEntity<>(token, HttpStatus.OK);
+    }
+
+    @GetMapping("/token")
+    public ResponseEntity token(HttpServletRequest request) {
+        String member = (String) request.getAttribute("memberId");
+        log.info("memberId: {}", member);
+
+        return new ResponseEntity("Good", HttpStatus.OK);
+    }
+
 }
