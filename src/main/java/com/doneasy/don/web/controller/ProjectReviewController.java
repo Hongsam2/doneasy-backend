@@ -1,14 +1,8 @@
 package com.doneasy.don.web.controller;
 
 import com.doneasy.don.domain.project.ContentOfProject;
-import com.doneasy.don.dto.CommentOfProjectShowDto;
-import com.doneasy.don.dto.ContentOfProjectShowDto;
-import com.doneasy.don.dto.ProjectShowDto;
-import com.doneasy.don.dto.SupportOfProjectShowDto;
-import com.doneasy.don.repository.project.CommentOfProjectRepository;
-import com.doneasy.don.repository.project.ContentOfProjectRepository;
-import com.doneasy.don.repository.project.ProjectRepository;
-import com.doneasy.don.repository.project.SupportOfProjectRepository;
+import com.doneasy.don.dto.*;
+import com.doneasy.don.repository.project.*;
 import com.doneasy.don.service.ContentOfProjectService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +28,7 @@ public class ProjectReviewController {
     private final CommentOfProjectRepository commentOfProjectRepository;
     private final SupportOfProjectRepository supportOfProjectRepository;
     private final ContentOfProjectService contentOfProjectService;
+    private final DonationOfProjectRepository donationOfProjectRepository;
 
     @PostMapping("/get-project")
     public ResponseEntity getProject(HttpServletRequest req, HttpServletResponse res, int id) {
@@ -74,5 +69,13 @@ public class ProjectReviewController {
 //        System.out.println(id);
         List<SupportOfProjectShowDto> supportOfProjectList = supportOfProjectRepository.getSupport(id);
         return new ResponseEntity(supportOfProjectList, HttpStatus.OK);
+    }
+
+    @PostMapping("/get-donation")
+    public ResponseEntity getDonator(HttpServletRequest req, HttpServletResponse res, int id) {
+
+        List<DonationOfProjectShowDto> donationOfProjectList = donationOfProjectRepository.findAllById(id);
+
+        return new ResponseEntity(donationOfProjectList, HttpStatus.OK);
     }
 }

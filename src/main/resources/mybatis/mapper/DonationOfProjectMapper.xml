@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doneasy.don.repository.project.DonationOfProjectRepository">
+
+    <select id="findAllById" resultType="com.doneasy.don.dto.DonationOfProjectShowDto">
+        select d.id, d.price, d.created_date, m.member_id as memberId
+        from   donationofproject d, project p, member m
+        where  d.member_id = m.id
+        and    d.project_id = p.id
+        and    project_id = #{id}
+    </select>
+</mapper>
