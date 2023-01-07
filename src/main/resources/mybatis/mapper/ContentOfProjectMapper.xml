@@ -8,4 +8,8 @@
         select * from contentofproject where projectproposal_id = (select projectproposal_id from project where id = #{project_id})
     </select>
 
+    <select id="findContentForProjectReview" resultType="com.doneasy.don.domain.project.ContentOfProject">
+        select * from contentofproject where projectproposal_id = (select projectproposal_id from project where id = #{project_id} and status = 'DONE')
+    </select>
+
 </mapper>

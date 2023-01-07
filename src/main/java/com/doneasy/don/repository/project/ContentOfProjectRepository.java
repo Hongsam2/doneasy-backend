@@ -8,4 +8,5 @@ import java.util.List;
 public interface ContentOfProjectRepository {
     List<ContentOfProject> findAllByProjectId(int projectId);
 
+    List<ContentOfProject> findContentForProjectReview(int projectId);
 }
