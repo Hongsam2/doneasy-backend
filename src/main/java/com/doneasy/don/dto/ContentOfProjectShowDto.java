@@ -10,7 +10,7 @@ public class ContentOfProjectShowDto {
     private Long id;
     private String subtitle;
     private String content;
-    private String image_name;
+    private byte[] image;
     private int order_num;
 
 }

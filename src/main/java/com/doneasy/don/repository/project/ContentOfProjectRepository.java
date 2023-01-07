@@ -7,4 +7,5 @@ import java.util.List;
 @Mapper
 public interface ContentOfProjectRepository {
     List<ContentOfProject> findAllByProjectId(int projectId);
+
 }

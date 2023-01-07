@@ -3,6 +3,7 @@ package com.doneasy.don.web.controller;
 import com.doneasy.don.domain.project.ContentOfProject;
 import com.doneasy.don.dto.ContentOfProjectShowDto;
 import com.doneasy.don.repository.project.ContentOfProjectRepository;
+import com.doneasy.don.service.ContentOfProjectService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -22,14 +23,22 @@ import java.util.List;
 @RequestMapping("/content-of-project")
 public class ContentOfProjectController {
 
-    private final ContentOfProjectRepository contentOfProject;
+    private final ContentOfProjectRepository contentOfProjectRepository;
+    private final ContentOfProjectService contentOfProjectService;
     @PostMapping("/get-content")
-    public ResponseEntity<List<ContentOfProject>> getContent(HttpServletRequest req, HttpServletResponse res, int id) {
+    public ResponseEntity<List<ContentOfProject>> getContent(HttpServletRequest req, HttpServletResponse res, int id) throws IOException {
 //        System.out.println(id);
-        List<ContentOfProject> findContent = contentOfProject.findAllByProjectId(id);
+        List<ContentOfProject> findContent = contentOfProjectRepository.findAllByProjectId(id);
+
+        List<String> imageName = new ArrayList<>();
+        for (int i = 0; i < findContent.size(); i++) {
+            imageName.add(findContent.get(i).getImage_name());
+        }
+
+        List<byte[]> array = contentOfProjectService.getByteArray(imageName);
         List<ContentOfProjectShowDto> list = new ArrayList<>();
         for (ContentOfProject ofProject : findContent) {
-            list.add(new ContentOfProjectShowDto(ofProject.getId(), ofProject.getSubtitle(), ofProject.getContent(), ofProject.getImage_name(), ofProject.getOrder_num()));
+            list.add(new ContentOfProjectShowDto(ofProject.getId(), ofProject.getSubtitle(), ofProject.getContent(), array.get(findContent.indexOf(ofProject)), ofProject.getOrder_num()));
         }
         return new ResponseEntity(list, HttpStatus.OK);
     }
