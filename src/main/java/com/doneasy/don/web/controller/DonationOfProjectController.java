@@ -23,11 +23,11 @@ public class DonationOfProjectController {
 
     private final DonationOfProjectRepository donationOfProjectRepository;
     @PostMapping("/get-donation")
-    public ResponseEntity getDonator(HttpServletRequest req, HttpServletResponse res, int id) {
+    public ResponseEntity<List<DonationOfProjectShowDto>> getDonator(HttpServletRequest req, HttpServletResponse res, int id) {
 
         List<DonationOfProjectShowDto> donationOfProjectList = donationOfProjectRepository.findAllById(id);
 
-        return new ResponseEntity(donationOfProjectList, HttpStatus.OK);
+        return new ResponseEntity<>(donationOfProjectList, HttpStatus.OK);
     }
     @PostMapping("/pay")
     public ResponseEntity pay(String adminKey) {
