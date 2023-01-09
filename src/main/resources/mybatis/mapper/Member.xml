@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//matis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.user.MemberRepository">
+    <select id="findByMemberId" resultType="com.doneasy.don.domain.user.Member" parameterType="string">
+        select * from member where member_id=#{member_id}
+    </select>
+</mapper>

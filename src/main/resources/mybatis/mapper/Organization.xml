@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//matis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.user.OrganizationRepository">
+    <select id="findByOrganizationId" resultType="com.doneasy.don.domain.user.Organization" parameterType="string">
+        select * from organization where organization_id=#{organization_id}
+    </select>
+</mapper>

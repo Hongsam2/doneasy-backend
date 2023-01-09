@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//matis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doneasy.don.repository.project.DonationOfProjectRepository">
+    <select id="findByMemberId" resultType="com.doneasy.don.domain.project.DonationOfProject">
+        select * from donationofproject where member_id=#{member_id}
+    </select>
+
+    <select id="findAll" resultType="com.doneasy.don.dto.project.DonationOfProjectDto">
+        select id, price from donationofproject
+    </select>
+</mapper>
+
