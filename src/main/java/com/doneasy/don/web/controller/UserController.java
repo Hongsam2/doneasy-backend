@@ -6,9 +6,11 @@ import com.doneasy.don.dto.ContentReDto;
 import com.doneasy.don.repository.project.ProjectProposalRepository;
 import com.doneasy.don.service.project.ProjectProposalService;
 import com.doneasy.don.service.project.ReviewService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -67,13 +69,13 @@ public class UserController {
     @PostMapping("/saveReview")
     public ResponseEntity saveReview(@RequestPart("boardSaveReDto") BoardSaveReDto boardSaveReDto, @RequestPart("imageList") List<MultipartFile> multipartFileList) throws IOException {
         reviewService.saveRe(boardSaveReDto, multipartFileList);
-
-
-   List<ContentReDto> contentReDtoList= boardSaveReDto.getContentReDtoList();
-        for (ContentReDto contentReDto : contentReDtoList) {
-            System.out.println(contentReDto.getSubtitle());
-            System.out.println(contentReDto.getContents());
-        }
+//
+//
+//   List<ContentReDto> contentReDtoList= boardSaveReDto.getContentReDtoList();
+//        for (ContentReDto contentReDto : contentReDtoList) {
+//            System.out.println(contentReDto.getSubtitle());
+//            System.out.println(contentReDto.getContents());
+//        }
 
 
 

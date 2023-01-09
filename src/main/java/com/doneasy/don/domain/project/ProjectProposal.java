@@ -57,7 +57,7 @@ public class ProjectProposal {
         int day2 = Integer.parseInt(end.substring(8));
         LocalDate date2 = LocalDate.of(year2, month2, day2);
 
-        return new ProjectProposal(null,a,date,date1,date2, boardSaveDto.getTitle(), boardSaveDto.getTarget_price(),ProjectProposalStatus.WAIT,LocalDateTime.now(),null);
+        return new ProjectProposal(null,a,date,date1,date2, boardSaveDto.getTitle(), boardSaveDto.getTarget_price(),ProjectProposalStatus.WAIT,LocalDateTime.now(),1l);
 
 
 
